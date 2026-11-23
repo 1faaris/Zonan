@@ -1,0 +1,64 @@
+// ====== CONFIG ======
+// Replace with your WhatsApp number in international format, no +, no spaces:
+const WHATSAPP_NUMBER = "923000000000"; // e.g., 923001234567
+
+// Set visible WhatsApp text
+document.getElementById("waText").textContent =
+  "+" + WHATSAPP_NUMBER.replace(/^(\d{2})/, "\$1 ");
+
+// Footer year
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) e.target.classList.add("in");
+  });
+}, { threshold: 0.14 });
+
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// Product -> contact autofill
+document.querySelectorAll("[data-product]").forEach(a => {
+  a.addEventListener("click", () => {
+    const p = a.getAttribute("data-product");
+    const field = document.getElementById("productField");
+    if (field) field.value = p;
+  });
+});
+
+// Form -> WhatsApp
+const form = document.getElementById("contactForm");
+const waBtn = document.getElementById("waBtn");
+
+function waLink(text){
+  return `[https://wa.me/](https://wa.me/)\${WHATSAPP_NUMBER}?text=\${encodeURIComponent(text)}`;
+}
+
+waBtn.href = waLink("Hello ZONAN! I want to place an order.");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const name = data.get("name");
+  const phone = data.get("phone");
+  const product = data.get("product");
+  const message = data.get("message");
+
+  const text =
+`Assalam-o-Alaikum ZONAN,
+Name: \${name}
+Phone: \${phone}
+Product: \${product || "Not selected"}
+Message: \${message}`;
+
+  window.open(waLink(text), "_blank");
+});
+
+// Mobile menu
+const hamburger = document.querySelector(".hamburger");
+const menu = document.querySelector(".menu");
+hamburger.addEventListener("click", () => {
+  const open = menu.classList.toggle("open");
+  hamburger.setAttribute("aria-expanded", String(open));
+});

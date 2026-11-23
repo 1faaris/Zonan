@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZONAN — Perfumes</title>
+  <meta name="description" content="ZONAN perfumes — luxury scents crafted to last." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="ZONAN Home">
+      <span class="brandMark">Z</span>
+      <span class="brandText">ZONAN</span>
+    </a>
+
+    <nav class="menu">
+      <a href="#products">Products</a>
+      <a href="#story">Story</a>
+      <a href="#contact">Contact</a>
+      <a class="btn small" href="#products">Shop</a>
+    </nav>
+
+    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroBg" aria-hidden="true"></div>
+
+      <div class="heroInner">
+        <p class="kicker reveal">Luxury Perfumes</p>
+        <h1 class="headline reveal">
+          ZONAN <span class="gold">Essence</span><br/>
+          that stays with you.
+        </h1>
+        <p class="sub reveal">
+          Premium notes. Long-lasting projection. Crafted for signature presence.
+        </p>
+
+        <div class="actions reveal">
+          <a class="btn" href="#products">Explore Scents</a>
+          <a class="btn ghost" href="#contact">Order / Inquiry</a>
+        </div>
+
+        <div class="stats reveal">
+          <div class="stat"><b>8–12h</b><span>Lasting</span></div>
+          <div class="stat"><b>Premium</b><span>Notes</span></div>
+          <div class="stat"><b>Unisex</b><span>Range</span></div>
+        </div>
+      </div>
+
+      <div class="bottleWrap" aria-hidden="true">
+        <div class="bottle">
+          <div class="shine"></div>
+          <div class="label">ZONAN</div>
+        </div>
+        <div class="mist"></div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="section">
+      <div class="sectionHead">
+        <h2 class="reveal">Featured Scents</h2>
+        <p class="muted reveal">Replace names/prices easily from HTML.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal">
+          <div class="cardTop">
+            <div class="badge">Best Seller</div>
+            <div class="note">Woody • Amber</div>
+          </div>
+          <h3>Zonan Noir</h3>
+          <p class="muted">Bold dark woods with warm amber trail.</p>
+          <div class="row">
+            <span class="price">PKR 6,999</span>
+            <a class="link" href="#contact" data-product="Zonan Noir">Order</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="cardTop">
+            <div class="badge">New</div>
+            <div class="note">Fresh • Citrus</div>
+          </div>
+          <h3>Zonan Azure</h3>
+          <p class="muted">Crisp citrus opening with clean musk base.</p>
+          <div class="row">
+            <span class="price">PKR 6,499</span>
+            <a class="link" href="#contact" data-product="Zonan Azure">Order</a>
+          </div>
+        </article>
+
+        <article class="card reveal">
+          <div class="cardTop">
+            <div class="badge">Limited</div>
+            <div class="note">Floral • Vanilla</div>
+          </div>
+          <h3>Zonan Bloom</h3>
+          <p class="muted">Soft florals balanced by creamy vanilla.</p>
+          <div class="row">
+            <span class="price">PKR 6,799</span>
+            <a class="link" href="#contact" data-product="Zonan Bloom">Order</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section id="story" class="section story">
+      <div class="storyInner">
+        <h2 class="reveal">Our Story</h2>
+        <p class="reveal muted">
+          ZONAN is built around modern luxury—clean design, premium oils, and
+          a signature sillage. Each blend is crafted to feel confident, timeless,
+          and unforgettable.
+        </p>
+
+        <div class="pillRow reveal">
+          <span class="pill">Premium oils</span>
+          <span class="pill">Long lasting</span>
+          <span class="pill">Gift-ready</span>
+        </div>
+      </div>
+      <div class="storyArt" aria-hidden="true"></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="sectionHead">
+        <h2 class="reveal">Order / Inquiry</h2>
+        <p class="muted reveal">WhatsApp order + simple form.</p>
+      </div>
+
+      <div class="contactGrid">
+        <form class="form reveal" id="contactForm">
+          <label>
+            Name
+            <input name="name" placeholder="Your name" required />
+          </label>
+
+          <label>
+            Phone
+            <input name="phone" placeholder="03xx-xxxxxxx" required />
+          </label>
+
+          <label>
+            Product (optional)
+            <input name="product" id="productField" placeholder="e.g., Zonan Noir" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Size, delivery city, etc." required></textarea>
+          </label>
+
+          <button class="btn" type="submit">Send on WhatsApp</button>
+          <p class="muted tiny">Note: Replace WhatsApp number in <code>app.js</code>.</p>
+        </form>
+
+        <div class="panel reveal">
+          <h3>Quick Contact</h3>
+          <p class="muted">Response within business hours.</p>
+
+          <div class="panelRow">
+            <span class="k">WhatsApp</span>
+            <span class="v" id="waText">+92 300 0000000</span>
+          </div>
+          <div class="panelRow">
+            <span class="k">Email</span>
+            <span class="v">hello@zonan.pk</span>
+          </div>
+          <div class="panelRow">
+            <span class="k">Delivery</span>
+            <span class="v">All Pakistan</span>
+          </div>
+
+          <a class="btn ghost" id="waBtn" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> ZONAN. All rights reserved.</div>
+      <div class="muted">Made for a premium scent experience.</div>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
